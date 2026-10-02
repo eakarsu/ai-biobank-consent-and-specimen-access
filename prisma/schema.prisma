@@ -1,0 +1,363 @@
+// Generated schema — modeled after beautyhqio conventions.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  active       Boolean @default(true)
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  role         Role     @default(ANALYST)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+enum Role {
+  ADMIN
+  MANAGER
+  ANALYST
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  actorId   String?
+  actorName String?
+  action    String
+  entity    String
+  entityId  String?
+  detail    String?
+  createdAt DateTime @default(now())
+}
+
+model WorkflowAnalysis {
+ id String @id @default(cuid())
+ actorId String
+ workflow String
+ subjectEntity String
+ subjectId String
+ input Json
+ evidence Json
+ evidenceHash String
+ result Json
+ model String
+ receipt String?
+ createdAt DateTime @default(now())
+ @@index([workflow, createdAt])
+}
+model RecordReview {
+ id String @id @default(cuid())
+ actorId String
+ entity String
+ entityId String
+ version String
+ reason String
+ createdAt DateTime @default(now())
+ @@unique([entity, entityId, version, actorId])
+}
+model UsageBucket {
+ id String @id
+ calls Int
+}
+model IssuedCredential {
+ token String @id
+ entity String
+ entityId String
+ version String
+ assertion Json
+ createdAt DateTime @default(now())
+ revokedAt DateTime?
+ @@index([entity, entityId, createdAt])
+}
+
+model DomainArtifact {
+ id String @id @default(cuid())
+ subjectEntity String
+ subjectId String
+ title String
+ content String
+ contentHash String
+ actorId String
+ approvedBy String?
+ createdAt DateTime @default(now())
+ @@index([subjectEntity, subjectId])
+}
+
+model RecordApproval {
+ id String @id
+ version String
+}
+model DomainExecution {
+ id String @id
+ actorId String
+ connectorId String
+ action String
+ subjectEntity String
+ subjectId String
+ version String
+ status String
+ result Json?
+ createdAt DateTime @default(now())
+}
+
+model WorkSession {
+ id String @id @default(cuid())
+ actorId String
+ respondentId String
+ subjectEntity String
+ subjectId String
+ questions Json
+ answers Json
+ currentQuestion String?
+ status String
+ deadline DateTime
+ createdAt DateTime @default(now())
+ @@index([respondentId, createdAt])
+}
+model SessionMedia {
+ id String @id @default(cuid())
+ sessionId String
+ questionId String
+ actorId String
+ contentType String
+ bytes Bytes
+ contentHash String
+ createdAt DateTime @default(now())
+ @@index([sessionId])
+}
+
+model AppSetting {
+ id String @id
+ value Json
+ updatedAt DateTime @updatedAt
+}
+
+model BiobankCollection {
+ id String @id @default(cuid())
+ name String
+ collectionCode String
+ institution String
+ custodian String
+ protocolNumber String
+ reviewAt DateTime
+ status String @default("Draft")
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([createdAt])
+ inverseResearchDonor_biobankCollectionId ResearchDonor[] @relation("ResearchDonor_biobankCollectionId")
+ inverseConsentVersion_biobankCollectionId ConsentVersion[] @relation("ConsentVersion_biobankCollectionId")
+ inverseSpecimen_biobankCollectionId Specimen[] @relation("Specimen_biobankCollectionId")
+ inverseFreezerLocation_biobankCollectionId FreezerLocation[] @relation("FreezerLocation_biobankCollectionId")
+ inverseSpecimenPlacement_biobankCollectionId SpecimenPlacement[] @relation("SpecimenPlacement_biobankCollectionId")
+ inverseAccessRequest_biobankCollectionId AccessRequest[] @relation("AccessRequest_biobankCollectionId")
+ inverseSpecimenAccess_biobankCollectionId SpecimenAccess[] @relation("SpecimenAccess_biobankCollectionId")
+ inverseMaterialAgreement_biobankCollectionId MaterialAgreement[] @relation("MaterialAgreement_biobankCollectionId")
+ inverseOperationalTask_biobankCollectionId OperationalTask[] @relation("OperationalTask_biobankCollectionId")
+ inverseRuleVersion_biobankCollectionId RuleVersion[] @relation("RuleVersion_biobankCollectionId")
+ inverseDocumentRequirement_biobankCollectionId DocumentRequirement[] @relation("DocumentRequirement_biobankCollectionId")
+}
+
+model ResearchDonor {
+ id String @id @default(cuid())
+ name String
+ participantCode String
+ consentAt DateTime
+ restrictions String
+ withdrawalAt DateTime?
+ status String @default("Draft")
+ biobankCollectionId String
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([createdAt])
+ @@index([biobankCollectionId])
+ linkedBiobankCollectionId BiobankCollection @relation("ResearchDonor_biobankCollectionId", fields: [biobankCollectionId], references: [id], onDelete: Restrict)
+ inverseSpecimen_researchDonorId Specimen[] @relation("Specimen_researchDonorId")
+}
+
+model ConsentVersion {
+ id String @id @default(cuid())
+ title String
+ version String
+ effectiveAt DateTime
+ permittedUses String
+ prohibitedUses String
+ sourceReference String
+ status String @default("Draft")
+ biobankCollectionId String
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([createdAt])
+ @@index([biobankCollectionId])
+ linkedBiobankCollectionId BiobankCollection @relation("ConsentVersion_biobankCollectionId", fields: [biobankCollectionId], references: [id], onDelete: Restrict)
+}
+
+model Specimen {
+ id String @id @default(cuid())
+ name String
+ researchDonorId String
+ specimenCode String
+ specimenType String
+ collectedAt DateTime
+ volumeUl Float
+ status String @default("Draft")
+ biobankCollectionId String
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([createdAt])
+ @@index([biobankCollectionId])
+ linkedResearchDonorId ResearchDonor @relation("Specimen_researchDonorId", fields: [researchDonorId], references: [id], onDelete: Restrict)
+ linkedBiobankCollectionId BiobankCollection @relation("Specimen_biobankCollectionId", fields: [biobankCollectionId], references: [id], onDelete: Restrict)
+ inverseSpecimenPlacement_specimenId SpecimenPlacement[] @relation("SpecimenPlacement_specimenId")
+ inverseSpecimenAccess_specimenId SpecimenAccess[] @relation("SpecimenAccess_specimenId")
+}
+
+model FreezerLocation {
+ id String @id @default(cuid())
+ name String
+ freezer String
+ rack String
+ box String
+ slot String
+ capacity Int
+ status String @default("Draft")
+ biobankCollectionId String
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([createdAt])
+ @@index([biobankCollectionId])
+ linkedBiobankCollectionId BiobankCollection @relation("FreezerLocation_biobankCollectionId", fields: [biobankCollectionId], references: [id], onDelete: Restrict)
+ inverseSpecimenPlacement_freezerLocationId SpecimenPlacement[] @relation("SpecimenPlacement_freezerLocationId")
+}
+
+model SpecimenPlacement {
+ id String @id @default(cuid())
+ title String
+ specimenId String
+ freezerLocationId String
+ placedAt DateTime
+ quantity Int
+ status String @default("Draft")
+ biobankCollectionId String
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([createdAt])
+ @@index([biobankCollectionId])
+ linkedSpecimenId Specimen @relation("SpecimenPlacement_specimenId", fields: [specimenId], references: [id], onDelete: Restrict)
+ linkedFreezerLocationId FreezerLocation @relation("SpecimenPlacement_freezerLocationId", fields: [freezerLocationId], references: [id], onDelete: Restrict)
+ linkedBiobankCollectionId BiobankCollection @relation("SpecimenPlacement_biobankCollectionId", fields: [biobankCollectionId], references: [id], onDelete: Restrict)
+}
+
+model AccessRequest {
+ id String @id @default(cuid())
+ title String
+ requester String
+ institution String
+ purpose String
+ requestedAt DateTime
+ protocolReference String
+ status String @default("Draft")
+ biobankCollectionId String
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([createdAt])
+ @@index([biobankCollectionId])
+ linkedBiobankCollectionId BiobankCollection @relation("AccessRequest_biobankCollectionId", fields: [biobankCollectionId], references: [id], onDelete: Restrict)
+ inverseSpecimenAccess_accessRequestId SpecimenAccess[] @relation("SpecimenAccess_accessRequestId")
+ inverseMaterialAgreement_accessRequestId MaterialAgreement[] @relation("MaterialAgreement_accessRequestId")
+}
+
+model SpecimenAccess {
+ id String @id @default(cuid())
+ title String
+ accessRequestId String
+ specimenId String
+ quantity Int
+ useDescription String
+ reviewNotes String
+ status String @default("Draft")
+ biobankCollectionId String
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([createdAt])
+ @@index([biobankCollectionId])
+ linkedAccessRequestId AccessRequest @relation("SpecimenAccess_accessRequestId", fields: [accessRequestId], references: [id], onDelete: Restrict)
+ linkedSpecimenId Specimen @relation("SpecimenAccess_specimenId", fields: [specimenId], references: [id], onDelete: Restrict)
+ linkedBiobankCollectionId BiobankCollection @relation("SpecimenAccess_biobankCollectionId", fields: [biobankCollectionId], references: [id], onDelete: Restrict)
+}
+
+model MaterialAgreement {
+ id String @id @default(cuid())
+ title String
+ accessRequestId String
+ version String
+ terms String
+ expiresAt DateTime
+ signatureEvidence String?
+ status String @default("Draft")
+ biobankCollectionId String
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([createdAt])
+ @@index([biobankCollectionId])
+ linkedAccessRequestId AccessRequest @relation("MaterialAgreement_accessRequestId", fields: [accessRequestId], references: [id], onDelete: Restrict)
+ linkedBiobankCollectionId BiobankCollection @relation("MaterialAgreement_biobankCollectionId", fields: [biobankCollectionId], references: [id], onDelete: Restrict)
+}
+
+model OperationalTask {
+ id String @id @default(cuid())
+ title String
+ owner String
+ priority String
+ startAt DateTime
+ dueAt DateTime
+ done Boolean
+ notes String?
+ status String @default("Draft")
+ biobankCollectionId String
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([createdAt])
+ @@index([biobankCollectionId])
+ linkedBiobankCollectionId BiobankCollection @relation("OperationalTask_biobankCollectionId", fields: [biobankCollectionId], references: [id], onDelete: Restrict)
+}
+
+model RuleVersion {
+ id String @id @default(cuid())
+ title String
+ jurisdiction String
+ version String
+ effectiveAt DateTime
+ expiresAt DateTime?
+ sourceUrl String
+ requirementText String
+ status String @default("Draft")
+ biobankCollectionId String
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([createdAt])
+ @@index([biobankCollectionId])
+ linkedBiobankCollectionId BiobankCollection @relation("RuleVersion_biobankCollectionId", fields: [biobankCollectionId], references: [id], onDelete: Restrict)
+}
+
+model DocumentRequirement {
+ id String @id @default(cuid())
+ title String
+ category String
+ requiredBy DateTime
+ sourceReference String
+ evidenceReference String?
+ reviewNotes String?
+ status String @default("Draft")
+ biobankCollectionId String
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([createdAt])
+ @@index([biobankCollectionId])
+ linkedBiobankCollectionId BiobankCollection @relation("DocumentRequirement_biobankCollectionId", fields: [biobankCollectionId], references: [id], onDelete: Restrict)
+}

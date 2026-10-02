@@ -1,0 +1,605 @@
+{
+  "BiobankCollection": {
+    "name": "BiobankCollection",
+    "fields": [
+      {
+        "name": "name",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "collectionCode",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "institution",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "custodian",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "protocolNumber",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "reviewAt",
+        "kind": "date",
+        "required": true
+      },
+      {
+        "name": "status",
+        "kind": "string",
+        "required": true
+      }
+    ]
+  },
+  "ResearchDonor": {
+    "name": "ResearchDonor",
+    "fields": [
+      {
+        "name": "name",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "participantCode",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "consentAt",
+        "kind": "date",
+        "required": true
+      },
+      {
+        "name": "restrictions",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "withdrawalAt",
+        "kind": "date",
+        "required": false
+      },
+      {
+        "name": "status",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "biobankCollectionId",
+        "kind": "string",
+        "required": true,
+        "relation": "BiobankCollection"
+      }
+    ],
+    "parent": {
+      "entity": "BiobankCollection",
+      "field": "biobankCollectionId"
+    }
+  },
+  "ConsentVersion": {
+    "name": "ConsentVersion",
+    "fields": [
+      {
+        "name": "title",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "version",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "effectiveAt",
+        "kind": "date",
+        "required": true
+      },
+      {
+        "name": "permittedUses",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "prohibitedUses",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "sourceReference",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "status",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "biobankCollectionId",
+        "kind": "string",
+        "required": true,
+        "relation": "BiobankCollection"
+      }
+    ],
+    "parent": {
+      "entity": "BiobankCollection",
+      "field": "biobankCollectionId"
+    }
+  },
+  "Specimen": {
+    "name": "Specimen",
+    "fields": [
+      {
+        "name": "name",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "researchDonorId",
+        "kind": "string",
+        "required": true,
+        "relation": "ResearchDonor"
+      },
+      {
+        "name": "specimenCode",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "specimenType",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "collectedAt",
+        "kind": "date",
+        "required": true
+      },
+      {
+        "name": "volumeUl",
+        "kind": "number",
+        "required": true,
+        "min": 0
+      },
+      {
+        "name": "status",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "biobankCollectionId",
+        "kind": "string",
+        "required": true,
+        "relation": "BiobankCollection"
+      }
+    ],
+    "parent": {
+      "entity": "BiobankCollection",
+      "field": "biobankCollectionId"
+    }
+  },
+  "FreezerLocation": {
+    "name": "FreezerLocation",
+    "fields": [
+      {
+        "name": "name",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "freezer",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "rack",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "box",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "slot",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "capacity",
+        "kind": "number",
+        "required": true,
+        "integer": true,
+        "min": 0
+      },
+      {
+        "name": "status",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "biobankCollectionId",
+        "kind": "string",
+        "required": true,
+        "relation": "BiobankCollection"
+      }
+    ],
+    "parent": {
+      "entity": "BiobankCollection",
+      "field": "biobankCollectionId"
+    }
+  },
+  "SpecimenPlacement": {
+    "name": "SpecimenPlacement",
+    "fields": [
+      {
+        "name": "title",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "specimenId",
+        "kind": "string",
+        "required": true,
+        "relation": "Specimen"
+      },
+      {
+        "name": "freezerLocationId",
+        "kind": "string",
+        "required": true,
+        "relation": "FreezerLocation"
+      },
+      {
+        "name": "placedAt",
+        "kind": "date",
+        "required": true
+      },
+      {
+        "name": "quantity",
+        "kind": "number",
+        "required": true,
+        "integer": true,
+        "min": 0
+      },
+      {
+        "name": "status",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "biobankCollectionId",
+        "kind": "string",
+        "required": true,
+        "relation": "BiobankCollection"
+      }
+    ],
+    "parent": {
+      "entity": "BiobankCollection",
+      "field": "biobankCollectionId"
+    }
+  },
+  "AccessRequest": {
+    "name": "AccessRequest",
+    "fields": [
+      {
+        "name": "title",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "requester",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "institution",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "purpose",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "requestedAt",
+        "kind": "date",
+        "required": true
+      },
+      {
+        "name": "protocolReference",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "status",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "biobankCollectionId",
+        "kind": "string",
+        "required": true,
+        "relation": "BiobankCollection"
+      }
+    ],
+    "parent": {
+      "entity": "BiobankCollection",
+      "field": "biobankCollectionId"
+    }
+  },
+  "SpecimenAccess": {
+    "name": "SpecimenAccess",
+    "fields": [
+      {
+        "name": "title",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "accessRequestId",
+        "kind": "string",
+        "required": true,
+        "relation": "AccessRequest"
+      },
+      {
+        "name": "specimenId",
+        "kind": "string",
+        "required": true,
+        "relation": "Specimen"
+      },
+      {
+        "name": "quantity",
+        "kind": "number",
+        "required": true,
+        "integer": true,
+        "min": 0
+      },
+      {
+        "name": "useDescription",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "reviewNotes",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "status",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "biobankCollectionId",
+        "kind": "string",
+        "required": true,
+        "relation": "BiobankCollection"
+      }
+    ],
+    "parent": {
+      "entity": "BiobankCollection",
+      "field": "biobankCollectionId"
+    }
+  },
+  "MaterialAgreement": {
+    "name": "MaterialAgreement",
+    "fields": [
+      {
+        "name": "title",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "accessRequestId",
+        "kind": "string",
+        "required": true,
+        "relation": "AccessRequest"
+      },
+      {
+        "name": "version",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "terms",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "expiresAt",
+        "kind": "date",
+        "required": true
+      },
+      {
+        "name": "signatureEvidence",
+        "kind": "string",
+        "required": false
+      },
+      {
+        "name": "status",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "biobankCollectionId",
+        "kind": "string",
+        "required": true,
+        "relation": "BiobankCollection"
+      }
+    ],
+    "parent": {
+      "entity": "BiobankCollection",
+      "field": "biobankCollectionId"
+    }
+  },
+  "OperationalTask": {
+    "name": "OperationalTask",
+    "fields": [
+      {
+        "name": "title",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "owner",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "priority",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "startAt",
+        "kind": "date",
+        "required": true
+      },
+      {
+        "name": "dueAt",
+        "kind": "date",
+        "required": true
+      },
+      {
+        "name": "done",
+        "kind": "boolean",
+        "required": true
+      },
+      {
+        "name": "notes",
+        "kind": "string",
+        "required": false
+      },
+      {
+        "name": "status",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "biobankCollectionId",
+        "kind": "string",
+        "required": true,
+        "relation": "BiobankCollection"
+      }
+    ],
+    "parent": {
+      "entity": "BiobankCollection",
+      "field": "biobankCollectionId"
+    }
+  },
+  "RuleVersion": {
+    "name": "RuleVersion",
+    "fields": [
+      {
+        "name": "title",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "jurisdiction",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "version",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "effectiveAt",
+        "kind": "date",
+        "required": true
+      },
+      {
+        "name": "expiresAt",
+        "kind": "date",
+        "required": false
+      },
+      {
+        "name": "sourceUrl",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "requirementText",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "status",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "biobankCollectionId",
+        "kind": "string",
+        "required": true,
+        "relation": "BiobankCollection"
+      }
+    ],
+    "parent": {
+      "entity": "BiobankCollection",
+      "field": "biobankCollectionId"
+    }
+  },
+  "DocumentRequirement": {
+    "name": "DocumentRequirement",
+    "fields": [
+      {
+        "name": "title",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "category",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "requiredBy",
+        "kind": "date",
+        "required": true
+      },
+      {
+        "name": "sourceReference",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "evidenceReference",
+        "kind": "string",
+        "required": false
+      },
+      {
+        "name": "reviewNotes",
+        "kind": "string",
+        "required": false
+      },
+      {
+        "name": "status",
+        "kind": "string",
+        "required": true
+      },
+      {
+        "name": "biobankCollectionId",
+        "kind": "string",
+        "required": true,
+        "relation": "BiobankCollection"
+      }
+    ],
+    "parent": {
+      "entity": "BiobankCollection",
+      "field": "biobankCollectionId"
+    }
+  }
+}

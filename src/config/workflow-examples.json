@@ -1,0 +1,354 @@
+{
+  "consent-restriction-extraction": [
+    {
+      "label": "Routine review",
+      "values": {
+        "objective": "Prepare consent restriction extraction for fictional example 18-1.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to consent restriction extraction. Attach real approved sources separately."
+      },
+      "id": "consent-restriction-extraction-1"
+    },
+    {
+      "label": "Missing evidence",
+      "values": {
+        "objective": "Prepare consent restriction extraction for fictional example 18-2.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to consent restriction extraction. Attach real approved sources separately."
+      },
+      "id": "consent-restriction-extraction-2"
+    },
+    {
+      "label": "Complex exception",
+      "values": {
+        "objective": "Prepare consent restriction extraction for fictional example 18-3.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to consent restriction extraction. Attach real approved sources separately."
+      },
+      "id": "consent-restriction-extraction-3"
+    }
+  ],
+  "research-purpose-comparison": [
+    {
+      "label": "Routine review",
+      "values": {
+        "objective": "Prepare research purpose comparison for fictional example 18-1.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to research purpose comparison. Attach real approved sources separately."
+      },
+      "id": "research-purpose-comparison-1"
+    },
+    {
+      "label": "Missing evidence",
+      "values": {
+        "objective": "Prepare research purpose comparison for fictional example 18-2.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to research purpose comparison. Attach real approved sources separately."
+      },
+      "id": "research-purpose-comparison-2"
+    },
+    {
+      "label": "Complex exception",
+      "values": {
+        "objective": "Prepare research purpose comparison for fictional example 18-3.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to research purpose comparison. Attach real approved sources separately."
+      },
+      "id": "research-purpose-comparison-3"
+    }
+  ],
+  "access-packet-completeness": [
+    {
+      "label": "Routine review",
+      "values": {
+        "objective": "Prepare access packet completeness for fictional example 18-1.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to access packet completeness. Attach real approved sources separately."
+      },
+      "id": "access-packet-completeness-1"
+    },
+    {
+      "label": "Missing evidence",
+      "values": {
+        "objective": "Prepare access packet completeness for fictional example 18-2.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to access packet completeness. Attach real approved sources separately."
+      },
+      "id": "access-packet-completeness-2"
+    },
+    {
+      "label": "Complex exception",
+      "values": {
+        "objective": "Prepare access packet completeness for fictional example 18-3.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to access packet completeness. Attach real approved sources separately."
+      },
+      "id": "access-packet-completeness-3"
+    }
+  ],
+  "storage-discrepancy-summary": [
+    {
+      "label": "Routine review",
+      "values": {
+        "objective": "Prepare storage discrepancy summary for fictional example 18-1.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to storage discrepancy summary. Attach real approved sources separately."
+      },
+      "id": "storage-discrepancy-summary-1"
+    },
+    {
+      "label": "Missing evidence",
+      "values": {
+        "objective": "Prepare storage discrepancy summary for fictional example 18-2.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to storage discrepancy summary. Attach real approved sources separately."
+      },
+      "id": "storage-discrepancy-summary-2"
+    },
+    {
+      "label": "Complex exception",
+      "values": {
+        "objective": "Prepare storage discrepancy summary for fictional example 18-3.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to storage discrepancy summary. Attach real approved sources separately."
+      },
+      "id": "storage-discrepancy-summary-3"
+    }
+  ],
+  "withdrawal-impact-draft": [
+    {
+      "label": "Routine review",
+      "values": {
+        "objective": "Prepare withdrawal impact draft for fictional example 18-1.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to withdrawal impact draft. Attach real approved sources separately."
+      },
+      "id": "withdrawal-impact-draft-1"
+    },
+    {
+      "label": "Missing evidence",
+      "values": {
+        "objective": "Prepare withdrawal impact draft for fictional example 18-2.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to withdrawal impact draft. Attach real approved sources separately."
+      },
+      "id": "withdrawal-impact-draft-2"
+    },
+    {
+      "label": "Complex exception",
+      "values": {
+        "objective": "Prepare withdrawal impact draft for fictional example 18-3.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to withdrawal impact draft. Attach real approved sources separately."
+      },
+      "id": "withdrawal-impact-draft-3"
+    }
+  ],
+  "material-transfer-agreement-brief": [
+    {
+      "label": "Routine review",
+      "values": {
+        "objective": "Prepare material transfer agreement brief for fictional example 18-1.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to material transfer agreement brief. Attach real approved sources separately."
+      },
+      "id": "material-transfer-agreement-brief-1"
+    },
+    {
+      "label": "Missing evidence",
+      "values": {
+        "objective": "Prepare material transfer agreement brief for fictional example 18-2.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to material transfer agreement brief. Attach real approved sources separately."
+      },
+      "id": "material-transfer-agreement-brief-2"
+    },
+    {
+      "label": "Complex exception",
+      "values": {
+        "objective": "Prepare material transfer agreement brief for fictional example 18-3.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to material transfer agreement brief. Attach real approved sources separately."
+      },
+      "id": "material-transfer-agreement-brief-3"
+    }
+  ],
+  "evidence-completeness-review": [
+    {
+      "label": "Routine review",
+      "values": {
+        "objective": "Prepare evidence completeness review for fictional example 18-1.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to evidence completeness review. Attach real approved sources separately."
+      },
+      "id": "evidence-completeness-review-1"
+    },
+    {
+      "label": "Missing evidence",
+      "values": {
+        "objective": "Prepare evidence completeness review for fictional example 18-2.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to evidence completeness review. Attach real approved sources separately."
+      },
+      "id": "evidence-completeness-review-2"
+    },
+    {
+      "label": "Complex exception",
+      "values": {
+        "objective": "Prepare evidence completeness review for fictional example 18-3.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to evidence completeness review. Attach real approved sources separately."
+      },
+      "id": "evidence-completeness-review-3"
+    }
+  ],
+  "operations-handoff-draft": [
+    {
+      "label": "Routine review",
+      "values": {
+        "objective": "Prepare operations handoff draft for fictional example 18-1.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Records are internally consistent; identify remaining evidence and responsible reviewers.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to operations handoff draft. Attach real approved sources separately."
+      },
+      "id": "operations-handoff-draft-1"
+    },
+    {
+      "label": "Missing evidence",
+      "values": {
+        "objective": "Prepare operations handoff draft for fictional example 18-2.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "A required source is absent and one date is inconsistent; describe gaps without filling factual blanks.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to operations handoff draft. Attach real approved sources separately."
+      },
+      "id": "operations-handoff-draft-2"
+    },
+    {
+      "label": "Complex exception",
+      "values": {
+        "objective": "Prepare operations handoff draft for fictional example 18-3.",
+        "sourceContext": "Fictional training scenario for Research biobanks, universities and biotechnology companies. Track specimen consent restrictions, freezer locations, access requests, material-transfer agreements and withdrawals. Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "applicableRules": "Use only the reviewed RuleVersion and source artifacts selected in this workspace; jurisdiction-specific requirements have not been established by this example.",
+        "knownDiscrepancies": "Two source versions conflict and a deadline is approaching; separate established facts, disputed details and follow-up actions.",
+        "constraints": "Draft for human review. Do not send, submit, certify, authorize payments or infer missing facts.",
+        "requestedOutput": "A concise summary, source-linked findings, missing items, owners and recommended next steps.",
+        "optionalReviewerNotes": "Example reviewer: Jordan Lee. Explicitly identify any unresolved interpretation.",
+        "optionalAdditionalEvidence": "Optional example material: dated operational notes, source receipts and prior review comments relevant to operations handoff draft. Attach real approved sources separately."
+      },
+      "id": "operations-handoff-draft-3"
+    }
+  ]
+}
